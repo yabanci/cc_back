@@ -7,7 +7,7 @@ Base = declarative_base()
 
 
 class Courier:
-    __tablename__ = 'b_couriers'
+    __tablename__ = "b_couriers"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)

@@ -13,7 +13,9 @@ class CourierController:
             return courier.get_location()
         return None
 
-    def change_courier_location(self, courier_id: int, new_location: dict) -> dict | None:
+    def change_courier_location(
+        self, courier_id: int, new_location: dict
+    ) -> dict | None:
         courier = self.session.query(Courier).filter(Courier.id == courier_id).first()
         if courier:
             courier.set_location(new_location)
