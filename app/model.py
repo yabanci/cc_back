@@ -6,8 +6,12 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 
-class Courier:
+class Courier(Base):
     __tablename__ = "b_couriers"
+
+    def __init__(self, name: str, location: dict) -> None:
+        self.name = name
+        self.location = json.dumps(location)
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
