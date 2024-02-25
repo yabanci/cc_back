@@ -1,3 +1,3 @@
 code:
-	black app
-	isort app
+	black .
+	isort .

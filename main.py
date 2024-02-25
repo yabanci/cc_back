@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from app.views import view
 
+from app.views import view
 
 app = FastAPI()
 

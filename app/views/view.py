@@ -7,6 +7,12 @@ from app.db import get_db
 router = APIRouter()
 
 
+@router.post("/b_courier")
+def create_courier(name: str, location: dict, db: Session = Depends(get_db)):
+    courier_controller = CourierController(session=db)
+    return courier_controller.create_courier(name, location)
+
+
 @router.get("/b_courier")
 def get_courier_location(courier_id: int, db: Session = Depends(get_db)):
     courier_controller = CourierController(session=db)
