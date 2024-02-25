@@ -1,11 +1,13 @@
 import uvicorn
 from fastapi import FastAPI
 
-from app.views import view
+from app import view
 
 app = FastAPI()
 
-app.include_router(view.router)
+app = FastAPI()
+
+app.include_router(view.router, prefix="/courier")
 
 
 @app.get("/ping")
